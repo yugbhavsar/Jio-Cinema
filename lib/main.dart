@@ -18,17 +18,17 @@ class MyApp extends StatelessWidget {
       create: (context) => ThemeStyleCubit(),
       child: BlocBuilder<ThemeStyleCubit, ThemeStyleState>(
         builder: (context, state) {
-          late bool isPrimary;
+          Color barColor = Colors.white;
           if (state is ThemeStyleInitial) {
-            isPrimary = state.isPrimary;
+            barColor = state.barColor;
           } else if (state is ThemeStyleNavColorPrimary) {
-            isPrimary = state.isPrimary;
+            barColor = state.barColor;
           }
           return MaterialApp(
               title: "EventHub",
               debugShowCheckedModeBanner: false,
               theme: ThemeData(scaffoldBackgroundColor: Colors.white,
-                  appBarTheme: AppBarTheme(color: isPrimary ? AppColor.primaryColor:Colors.white)),
+                  appBarTheme: AppBarTheme(color: barColor)),
               initialRoute: RouteName.introductionScreen,
               onGenerateRoute: AppRoute.generateRoute
           );

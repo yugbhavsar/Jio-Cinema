@@ -66,7 +66,7 @@ class OtpVerificationScreen extends StatelessWidget {
 
                 appSizeBox(height: 40),
                 customButton(buttonName: "Continue", onTap: (){
-                    BlocProvider.of<ThemeStyleCubit>(context).changeNavColor(true);
+                    BlocProvider.of<ThemeStyleCubit>(context).changeNavColor(barColor: AppColor.primaryColor);
                     Navigator.pushNamedAndRemoveUntil(context, RouteName.dashboard, (route) => false,);
                 }),
 

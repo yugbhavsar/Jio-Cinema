@@ -35,6 +35,14 @@ class AppImages {
   static String dbSave = "${imagePath}db_save.svg";
   static String dbOfferCard = "${imagePath}db_offerCard.svg";
   static String dbOfferCard1 = "${imagePath}db_offerCard1.png";
+
+  //Event Details Screen
+  static String eventImage77 = "${imagePath}image 77.png";
+  static String profileIcon_1 = "${imagePath}profileImage1.png";
+  static String location = "${imagePath}location.svg";
+  static String calendar = "${imagePath}calendar.svg";
+  static String saveWhite = "${imagePath}save_white.svg";
+  static String groupImage = "${imagePath}Group.png";
 }
 
 class Constants {
@@ -43,4 +51,6 @@ class Constants {
   static const List<String> eventWiseFilter = ["Sports", "Music" , "Food" , "Art"];
   static List<String> eventWiseFilterIcon = [AppImages.dbSports, AppImages.dbMusic , AppImages.dbFood , AppImages.dbArt];
   static List<Color> eventWiseFilterColor = [AppColor.red, AppColor.orange , AppColor.green , AppColor.secondaryColor];
+
+  static const eventDetails = "Launched in April 2006 as a statistical machine translation service, it originally used United Nations and European Parliament documents and transcripts to gather linguistic data. Rather than translating languages directly, it first translated text to English and then pivoted to the target language in most of the language combinations it posited in its grid,[7] with a few exceptions including Catalan–Spanish.[8] During a translation, it looked for patterns in millions of documents to help decide which words to choose and ";
 }

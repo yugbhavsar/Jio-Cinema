@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiocinema_clone/Bloc/Introduction_bloc/introduction_slider_bloc.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/Dashboard/DashboardScreen.dart';
+import 'package:jiocinema_clone/Screens/EventDetailScreen/EventDetailScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/IntroductionSlideScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/LoginScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/OtpVerificationScreen.dart';
@@ -19,6 +21,7 @@ class RouteName {
   static const String signupScreen = "SignupScreen";
   static const String otpVerificationScreen = "OtpVerificationScreen";
   static const String resetPasswordScreen = "ResetPasswordScreen";
+  static const String eventDetailScreen = "EventDetailScreen";
 }
 
 class AppRoute {
@@ -47,6 +50,8 @@ class AppRoute {
         );
       case RouteName.resetPasswordScreen:
         return MaterialPageRoute(builder: (context) => ResetPasswordScreen(),settings: const RouteSettings(name: RouteName.resetPasswordScreen));
+      case RouteName.eventDetailScreen:
+        return CupertinoPageRoute(builder: (context) => const EventDetailScreen(),settings: const RouteSettings(name: RouteName.eventDetailScreen));
       default:
         return MaterialPageRoute(builder: (context) => DashboardScreen(),settings: const RouteSettings(name: RouteName.loginScreen));
     }

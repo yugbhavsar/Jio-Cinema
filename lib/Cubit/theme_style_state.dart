@@ -5,11 +5,11 @@ part of 'theme_style_cubit.dart';
 sealed class ThemeStyleState {}
 
 final class ThemeStyleInitial extends ThemeStyleState {
-  bool isPrimary;
-  ThemeStyleInitial(this.isPrimary);
+  Color barColor;
+  ThemeStyleInitial(this.barColor);
 }
 
 final class ThemeStyleNavColorPrimary extends ThemeStyleState {
-    bool isPrimary;
-    ThemeStyleNavColorPrimary(this.isPrimary);
+    Color barColor = Colors.white;
+    ThemeStyleNavColorPrimary(this.barColor);
 }

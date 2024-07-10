@@ -137,12 +137,26 @@ ElevatedButton customButton({ required String buttonName, required VoidCallback 
   );
 }
 
+ElevatedButton appNormalButton({ required String title , Color backgroundColor = AppColor.primaryColor , double borderRadius = 8 , Color fontColor = Colors.white}) {
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+        backgroundColor: backgroundColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius))
+    ),
+    onPressed: (){
+
+    },
+    child: Text(title ,style: appTextStyle(fontType: FontType.bold , fontSize: 18 , textColor: fontColor),),
+  );
+}
+
 
 AppBar customAppBar({
   String title = "" ,
   Color titleColor = AppColor.black ,
   bool isTitleCenter = false ,
   String leadingIcon = "" ,
+  Color leadingIconColor = Colors.transparent,
   required VoidCallback leadingIconOnTap ,
   bool isHaveSuffixAction = false,
   List<String>? actions,
@@ -156,7 +170,7 @@ AppBar customAppBar({
     leading: Container(
       padding: const EdgeInsets.only(left: 10),
       child: IconButton(
-        icon: SvgPicture.asset(leadingIcon , fit: BoxFit.fill,height: 30,width: 30,),
+        icon: SvgPicture.asset(leadingIcon , fit: BoxFit.fill,height: 30,width: 30,color: leadingIconColor == Colors.transparent ? null:leadingIconColor),
         onPressed: leadingIconOnTap
       ),
     ),
