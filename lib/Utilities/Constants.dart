@@ -43,6 +43,21 @@ class AppImages {
   static String calendar = "${imagePath}calendar.svg";
   static String saveWhite = "${imagePath}save_white.svg";
   static String groupImage = "${imagePath}Group.png";
+  static String searchBlack = "${imagePath}search_black.svg";
+  static String more = "${imagePath}more.svg";
+
+  //SideDrawer
+  static String profile2 = "${imagePath}profile2.png";
+  static String menuPremium = "${imagePath}menu_premium.svg";
+  static String menuHelp = "${imagePath}menu_help.svg";
+  static String menuContactUs = "${imagePath}menu_contactUs.svg";
+  static String menuProfile = "${imagePath}menu_profile.svg";
+  static String menuSetting = "${imagePath}menu_setting.svg";
+  static String menuCalendar = "${imagePath}menu_calendar.svg";
+  static String menuBookmark = "${imagePath}menu_bookmark.svg";
+  static String menuLogout = "${imagePath}menu_logout.svg";
+  static String menuMessage = "${imagePath}menu_message.svg";
+
 }
 
 class Constants {

@@ -179,7 +179,7 @@ Widget dashboardSearchFilterSection(
   ]);
 }
 
-Widget upcomingEventCard(BuildContext context , VoidCallback onTap) {
+Widget upcomingEventCard(BuildContext context , VoidCallback onTap , int index) {
   return Card(
     color: Colors.white,
     elevation: 2,
@@ -196,7 +196,7 @@ Widget upcomingEventCard(BuildContext context , VoidCallback onTap) {
 
               Stack(
                   children:[
-                    SvgPicture.asset(AppImages.dbEventCard ,height: MediaQuery.of(context).size.height*0.19,width: MediaQuery.of(context).size.width*0.7-20,),
+                    (index == 0) ? Image.asset(AppImages.eventImage77 ,height: MediaQuery.of(context).size.height*0.19,width: MediaQuery.of(context).size.width*0.7-20,):SvgPicture.asset(AppImages.dbEventCard ,height: MediaQuery.of(context).size.height*0.19,width: MediaQuery.of(context).size.width*0.7-20,),
 
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -209,8 +209,8 @@ Widget upcomingEventCard(BuildContext context , VoidCallback onTap) {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("10" ,style: appTextStyle(fontSize: 14 , fontType: FontType.bold , textColor: AppColor.red),),
-                              Text("July" ,style: appTextStyle(fontSize: 14 , fontType: FontType.bold , textColor: AppColor.red),),
+                              Text("10" ,style: appTextStyle(fontSize: 14 , fontType: FontType.bold , textColor: AppColor.black),),
+                              Text("July" ,style: appTextStyle(fontSize: 14 , fontType: FontType.bold , textColor: AppColor.black),),
                             ],
                           ),
                         ),
@@ -219,7 +219,7 @@ Widget upcomingEventCard(BuildContext context , VoidCallback onTap) {
                             margin: const EdgeInsets.symmetric(horizontal: 10 , vertical: 10),
                             padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
                             decoration: BoxDecoration(color: AppColor.orange.withOpacity(0.7),borderRadius: BorderRadius.circular(10)),
-                            child: SvgPicture.asset(AppImages.dbSave , fit: BoxFit.fitHeight, height: 20)
+                            child: SvgPicture.asset(AppImages.dbSave , fit: BoxFit.fitHeight, height: 20,color: AppColor.secondaryColor.withOpacity(0.5),)
                         )
                       ],
                     )

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/Dashboard/DashboardWidgets.dart';
+import 'package:jiocinema_clone/Screens/SideDrawer/bloc/side_drawer_bloc.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
@@ -21,7 +22,14 @@ class DashboardScreen extends StatelessWidget {
           customTitle: dashboardTitleBar(),
           isHaveSuffixAction: true,
           actions: [AppImages.dbNotification],
-          leadingIconOnTap: () {}),
+          leadingIconOnTap: () {
+            var state = context.read<SideDrawerBloc>().sideMenuKey.currentState;
+            if (state?.isOpened ?? false) {
+              context.read<SideDrawerBloc>().sideMenuKey.currentState?.closeSideMenu();
+            }else{
+              context.read<SideDrawerBloc>().sideMenuKey.currentState?.openSideMenu();
+            }
+          }),
       body: SafeArea(
         child: Column(
           children: [
@@ -37,7 +45,8 @@ class DashboardScreen extends StatelessWidget {
                   children: [
 
                     titleWithSeeAll(title: "Upcoming Events", btnName: "see all", onTap: (){
-
+                        context.read<ThemeStyleCubit>().changeNavColor(barColor: Colors.white);
+                        Navigator.pushNamed(context, RouteName.eventListScreen);
                     }),
 
                     appSizeBox(height: 10),
@@ -50,7 +59,7 @@ class DashboardScreen extends StatelessWidget {
                           return upcomingEventCard(context,() {
                             BlocProvider.of<ThemeStyleCubit>(context).changeNavColor(barColor: Colors.transparent);
                             Navigator.pushNamed(context, RouteName.eventDetailScreen);
-                          },);
+                          },index);
                         },),
                       ),
                     ),
@@ -106,7 +115,7 @@ class DashboardScreen extends StatelessWidget {
                         children: List.generate(3, (index) {
                           return upcomingEventCard(context,() {
 
-                          },);
+                          },index);
                         },),
                       ),
                     ),
