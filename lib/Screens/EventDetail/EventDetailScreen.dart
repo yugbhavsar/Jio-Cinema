@@ -23,7 +23,7 @@ class EventDetailScreen extends StatelessWidget {
             leadingIconOnTap: (){
               BlocProvider.of<ThemeStyleCubit>(context).changeNavColor(barColor: AppColor.primaryColor);
               Navigator.pop(context);
-          }),
+          }, actionOnTap: (index ) {  }),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

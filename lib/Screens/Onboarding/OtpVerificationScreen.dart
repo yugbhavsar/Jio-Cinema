@@ -29,7 +29,7 @@ class OtpVerificationScreen extends StatelessWidget {
           leadingIcon: AppImages.back,
         leadingIconOnTap: (){
             Navigator.pop(context);
-        }
+        }, actionOnTap: (int ) {  }
       ),
       body: SafeArea(
         child: Container(
