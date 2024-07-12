@@ -5,6 +5,7 @@ import 'package:jiocinema_clone/Bloc/Introduction_bloc/introduction_slider_bloc.
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/Dashboard/DashboardScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventDetailScreen.dart';
+import 'package:jiocinema_clone/Screens/EventDetail/EventFilterScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventListScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/IntroductionSlideScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/LoginScreen.dart';
@@ -27,6 +28,7 @@ class RouteName {
   static const String eventDetailScreen = "EventDetailScreen";
   static const String sideDrawerScreen = "SideDrawerScreen";
   static const String eventListScreen = "EventListScreen";
+  static const String eventFilterScreen = "EventFilterScreen";
 }
 
 class AppRoute {
@@ -66,7 +68,9 @@ class AppRoute {
             settings: const RouteSettings(name: RouteName.sideDrawerScreen)
         );
       case RouteName.eventListScreen:
-        return MaterialPageRoute(builder: (context) => EventListScreen(),settings: const RouteSettings(name: RouteName.eventListScreen));
+        return MaterialPageRoute(builder: (context) => const EventListScreen(),settings: const RouteSettings(name: RouteName.eventListScreen));
+      case RouteName.eventFilterScreen:
+        return MaterialPageRoute(builder: (context) => EventFilterScreen(),settings:  const RouteSettings(name: RouteName.eventFilterScreen));
       default:
         return MaterialPageRoute(builder: (context) => DashboardScreen(),settings: const RouteSettings(name: RouteName.loginScreen));
     }

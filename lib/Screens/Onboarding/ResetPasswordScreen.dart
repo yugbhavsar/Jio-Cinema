@@ -13,7 +13,7 @@ class ResetPasswordScreen extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(leadingIcon: AppImages.back,leadingIconOnTap: (){
           Navigator.pop(context);
-      }),
+      }, actionOnTap: (int ) {  }),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 25),

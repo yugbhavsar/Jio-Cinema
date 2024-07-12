@@ -158,6 +158,7 @@ AppBar customAppBar({
   String leadingIcon = "" ,
   Color leadingIconColor = Colors.transparent,
   required VoidCallback leadingIconOnTap ,
+  required Function(int) actionOnTap,
   bool isHaveSuffixAction = false,
   List<String>? actions,
   bool isCustomTitleWidget = false,
@@ -174,19 +175,32 @@ AppBar customAppBar({
         onPressed: leadingIconOnTap
       ),
     ),
-    actions: isHaveSuffixAction ? appBarAction(actions ?? []): [],
+    actions: isHaveSuffixAction ? appBarAction(actions ?? [],(p0) => actionOnTap!(p0),): [],
   );
 }
 
-List<Widget> appBarAction(List<String> iconName) {
+List<Widget> appBarAction(List<String> iconName , Function(int) onTap) {
 
   return List.generate(iconName.length, (index) {
     return  Container(
       padding: const EdgeInsets.only(right: 10),
       child: IconButton(
           icon: SvgPicture.asset(iconName[index] , fit: BoxFit.fill,height: 30,width: 30,),
-          onPressed: (){}
+          onPressed: (){
+            onTap(index);
+          }
       ),
     );
   },);
+}
+
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  // Override behavior methods and getters like dragDevices
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+    PointerDeviceKind.trackpad,
+  };
 }

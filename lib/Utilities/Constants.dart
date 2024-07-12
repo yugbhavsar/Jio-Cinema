@@ -58,6 +58,19 @@ class AppImages {
   static String menuLogout = "${imagePath}menu_logout.svg";
   static String menuMessage = "${imagePath}menu_message.svg";
 
+
+  static String foodIcon = "${imagePath}foodIcon.png";
+  static String musicIcon = "${imagePath}musicIcon.png";
+  static String artIcon = "${imagePath}artIcon.png";
+  static String sportsIcon = "${imagePath}sportIcon.png";
+  static String filterCalendar = "${imagePath}filter_calendar.svg";
+  static String filterLocation = "${imagePath}filter_location.svg";
+  static String filterForward = "${imagePath}filter_forward.svg";
+
+
+
+
+
 }
 
 class Constants {

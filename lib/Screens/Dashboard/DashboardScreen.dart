@@ -29,6 +29,9 @@ class DashboardScreen extends StatelessWidget {
             }else{
               context.read<SideDrawerBloc>().sideMenuKey.currentState?.openSideMenu();
             }
+          },
+          actionOnTap: (index ) {
+
           }),
       body: SafeArea(
         child: Column(

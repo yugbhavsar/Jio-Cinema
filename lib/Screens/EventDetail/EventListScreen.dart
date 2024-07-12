@@ -3,8 +3,10 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
+import 'package:jiocinema_clone/Screens/EventDetail/EventFilterScreen.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
+import 'package:jiocinema_clone/Utilities/Routing.dart';
 import 'package:jiocinema_clone/Utilities/Utilites.dart';
 
 class EventListScreen extends StatelessWidget {
@@ -23,7 +25,19 @@ class EventListScreen extends StatelessWidget {
           leadingIconOnTap: (){
              context.read<ThemeStyleCubit>().changeNavColor(barColor: AppColor.primaryColor);
              Navigator.pop(context);
-          }
+          },
+          actionOnTap: (index) {
+            showModalBottomSheet(
+                useRootNavigator: true,
+                barrierColor: Colors.black.withOpacity(0.5),
+                isScrollControlled: true,
+                context: context,
+                builder: (context) => GestureDetector(
+                    onVerticalDragUpdate: (details) { },
+                    child: EventFilterScreen()
+                )
+            );
+          },
       ),
       body: SafeArea(
         child: Container(
@@ -58,7 +72,7 @@ class EventListScreen extends StatelessWidget {
                               Text("Wed, Apr 28 • 5:30 PM" , style: appTextStyle(fontType: FontType.medium500 , textColor: AppColor.primaryColor , fontSize: 14),),
 
                               Text(
-                                  "Jo Malone London’s Mother’s Day Presents" ,
+                                  "Jo Malone London’s Mother’s Day Presents",
                                   style: appTextStyle(fontType: FontType.semiBold , textColor: AppColor.black , fontSize: 16),
                                   maxLines: 3,
                                   overflow: TextOverflow.ellipsis,
@@ -69,7 +83,7 @@ class EventListScreen extends StatelessWidget {
                                   SvgPicture.asset(AppImages.location , fit: BoxFit.fill,height: 20,color: AppColor.textGray,),
                                   appSizeBox(width: 5),
                                   Text(
-                                    "Radius Gallery • Santa Cruz, CA" ,
+                                    "Radius Gallery • Santa Cruz, CA",
                                     style: appTextStyle(fontType: FontType.medium500 , textColor: AppColor.textGray , fontSize: 14),
                                     maxLines: 3,
                                     overflow: TextOverflow.ellipsis,

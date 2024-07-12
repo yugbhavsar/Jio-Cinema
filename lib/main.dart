@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
+import 'package:jiocinema_clone/Utilities/Utilites.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
             barColor = state.barColor;
           }
           return MaterialApp(
+              scrollBehavior: MyCustomScrollBehavior(),
               title: "EventHub",
               debugShowCheckedModeBanner: false,
               theme: ThemeData(scaffoldBackgroundColor: Colors.white,
