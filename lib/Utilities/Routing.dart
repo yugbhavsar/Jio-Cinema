@@ -7,6 +7,7 @@ import 'package:jiocinema_clone/Screens/Dashboard/DashboardScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventDetailScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventFilterScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventListScreen.dart';
+import 'package:jiocinema_clone/Screens/EventDetail/bloc/event_filter_bloc.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/IntroductionSlideScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/LoginScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/OtpVerificationScreen.dart';
@@ -70,7 +71,12 @@ class AppRoute {
       case RouteName.eventListScreen:
         return MaterialPageRoute(builder: (context) => const EventListScreen(),settings: const RouteSettings(name: RouteName.eventListScreen));
       case RouteName.eventFilterScreen:
-        return MaterialPageRoute(builder: (context) => EventFilterScreen(),settings:  const RouteSettings(name: RouteName.eventFilterScreen));
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+              create: (context) => EventFilterBloc(),
+              child: EventFilterScreen(),
+            ),
+            settings:  const RouteSettings(name: RouteName.eventFilterScreen));
       default:
         return MaterialPageRoute(builder: (context) => DashboardScreen(),settings: const RouteSettings(name: RouteName.loginScreen));
     }

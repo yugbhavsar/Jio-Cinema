@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventFilterScreen.dart';
+import 'package:jiocinema_clone/Screens/EventDetail/bloc/event_filter_bloc.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
@@ -34,7 +35,10 @@ class EventListScreen extends StatelessWidget {
                 context: context,
                 builder: (context) => GestureDetector(
                     onVerticalDragUpdate: (details) { },
-                    child: EventFilterScreen()
+                    child: BlocProvider(
+                      create: (context) => EventFilterBloc(),
+                      child: EventFilterScreen(),
+                    ),
                 )
             );
           },
