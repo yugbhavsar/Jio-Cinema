@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
+import 'package:jiocinema_clone/Utilities/Routing.dart';
 
 
 Widget dashboardTitleBar() {
@@ -78,10 +81,16 @@ Widget dashboardSearchFilterSection(
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  AppImages.dbSearch,
-                  fit: BoxFit.fill,
-                  height: 30,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, RouteName.searchEventScreen);
+                    context.read<ThemeStyleCubit>().changeNavColor(barColor: AppColor.white);
+                  },
+                  child: SvgPicture.asset(
+                    AppImages.dbSearch,
+                    fit: BoxFit.fill,
+                    height: 30,
+                  ),
                 ),
                 appSizeBox(width: 10),
                 Container(

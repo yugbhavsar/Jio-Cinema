@@ -107,32 +107,58 @@ TextField customTextField({
 }
 
 
-ElevatedButton customButton({ required String buttonName, required VoidCallback onTap ,}) {
-
+ElevatedButton customButton({
+  required String buttonName,
+  Color backgroundColor = AppColor.primaryColor,
+  Color textColor = Colors.white,
+  Color borderColor = AppColor.primaryColor,
+  double buttonHeight = 70,
+  bool isSuffixIconVisible = true ,
+  bool isPrefixIconVisible = false ,
+  String prefixIcon = "",
+  required VoidCallback onTap,
+}) {
   return ElevatedButton(
     onPressed: onTap ,
     style: ElevatedButton.styleFrom(
-      backgroundColor: AppColor.primaryColor,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+      backgroundColor: backgroundColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18), side: BorderSide(width: 1 , color:borderColor)),
     ),
     child: SizedBox(
-        height: 70,
+        height: buttonHeight,
         width: double.infinity,
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Center(child: Text(buttonName,style: appTextStyle(fontSize: 20 , fontType: FontType.bold , textColor: Colors.white), )),
+
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween  ,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                appSizeBox(height: 0,width: 0),
-                SvgPicture.asset(AppImages.lgContinueArrow , fit: BoxFit.fill,height: 40,)
+                SvgPicture.asset(isPrefixIconVisible ? prefixIcon:AppImages.editProfile,
+                  fit: BoxFit.fill,
+                  height: isPrefixIconVisible ? 25:0,
+                ),
+
+                appSizeBox(height: 0, width: 0),
+              ],
+            ),
+
+            Center(child: Text(buttonName,style: appTextStyle(fontSize: 20 , fontType: FontType.bold , textColor: textColor ), )),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                appSizeBox(height: 0, width: 0),
+                SvgPicture.asset(
+                  AppImages.lgContinueArrow, fit: BoxFit.fill, height: isSuffixIconVisible ? 40:0,)
               ],
             )
+
+
           ],
         )
 
-        
+
     )
   );
 }

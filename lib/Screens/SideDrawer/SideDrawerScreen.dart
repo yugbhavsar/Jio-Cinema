@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/Dashboard/DashboardScreen.dart';
+import 'package:jiocinema_clone/Screens/EventDetail/bloc/event_filter_bloc.dart';
 import 'package:jiocinema_clone/Screens/SideDrawer/bloc/side_drawer_bloc.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
+import 'package:jiocinema_clone/Utilities/Routing.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
 
@@ -16,7 +19,7 @@ class SideDrawerScreen extends StatelessWidget {
     return SideMenu(
       key: context.read<SideDrawerBloc>().sideMenuKey,
       menu: Padding(
-        padding: const EdgeInsets.only(left: 25),
+        padding: const EdgeInsets.only(left: 20),
           child: buildMenu(context)
       ),
       type: SideMenuType.shrinkNSlide,
@@ -70,11 +73,16 @@ Widget buildMenu(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-              elevation: 2.0,
-              shadowColor: AppColor.black,
-              child: Image.asset(AppImages.profile2 , fit: BoxFit.fitHeight ,height: 60,),
+
+            InkWell(
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 30.0,
+                child: Image.asset(AppImages.profile2 , fit: BoxFit.fill),
+              ),
+              onTap: (){
+                print("onTap Done");
+              },
             ),
 
             appSizeBox(height: 10),
@@ -83,24 +91,29 @@ Widget buildMenu(BuildContext context) {
 
             appSizeBox(height: 40),
 
-            Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: List.generate(context.read<SideDrawerBloc>().drawerIcon.length, (index) {
-                      return Container(
-                        margin: const EdgeInsets.all(20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SvgPicture.asset(context.read<SideDrawerBloc>().drawerIcon[index] , fit: BoxFit.fill,height: 25,),
-                            appSizeBox(width: 20),
-                            Text(context.read<SideDrawerBloc>().drawerTitle[index] , style: appTextStyle(fontType: FontType.semiBold , fontSize: 18 , textColor: AppColor.black),)
-                          ],
-                        ),
-                      );
-                    }),
-                  ),
-                )
+            SingleChildScrollView(
+              child: Column(
+                children: List.generate(context.read<SideDrawerBloc>().drawerIcon.length, (index) {
+                  return InkWell(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Container(
+                      margin: const EdgeInsets.all(20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SvgPicture.asset(context.read<SideDrawerBloc>().drawerIcon[index] , fit: BoxFit.fill,height: 25,),
+                          appSizeBox(width: 20),
+                          Text(context.read<SideDrawerBloc>().drawerTitle[index] , style: appTextStyle(fontType: FontType.semiBold , fontSize: 18 , textColor: AppColor.black),)
+                        ],
+                      ),
+                    ),
+                    onTap: (){
+                      Navigator.pushNamed(context, RouteName.myProfileScreen);
+                      context.read<ThemeStyleCubit>().changeNavColor(barColor: AppColor.white);
+                    },
+                  );
+                }),
+              ),
             ),
 
             Row(

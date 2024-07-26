@@ -7,17 +7,26 @@ part 'event_filter_state.dart';
 class EventFilterBloc extends Bloc<EventFilterEvent, EventFilterState> {
 
 
-  EventFilterBloc() : super(EventFilterInitial()) {
+  EventFilterBloc() : super(EventFilterState()) {
+
     on<EventFilterEvent>((event, emit) {
 
     });
 
     on<EventFilterChangeCategories>((event, emit) {
-        emit(EventFilterCategoriesChangeState(event.currentSelection));
+        state.selectedCategories = event.currentSelection;
+        emit(state.copy());
     });
 
     on<EventFilterDateTimeChange>((event, emit) {
-        emit(EventFilterChangeDateTimeSelection(selectedIndex: event.currentSelection));
+      state.selectedDateTimeIndex = event.currentSelection;
+      emit(state.copy());
     });
+
+    on<EventFilterPriceRangeChangeEvent>((event, emit) {
+      state.minPriceValue = event.minValue;
+      state.maxPriceValue = event.maxValue;
+      emit(state.copy());
+    },);
   }
 }

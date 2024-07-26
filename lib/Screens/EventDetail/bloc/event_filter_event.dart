@@ -15,5 +15,12 @@ final class EventFilterDateTimeChange extends EventFilterEvent {
     int currentSelection;
 
     EventFilterDateTimeChange({required this.currentSelection});
+}
 
+final class EventFilterPriceRangeChangeEvent extends EventFilterEvent {
+
+    double minValue;
+    double maxValue;
+
+    EventFilterPriceRangeChangeEvent({required this.minValue , required this.maxValue});
 }

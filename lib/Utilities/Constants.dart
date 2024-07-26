@@ -48,6 +48,7 @@ class AppImages {
 
   //SideDrawer
   static String profile2 = "${imagePath}profile2.png";
+  static String profile3 = "${imagePath}profile3.png";
   static String menuPremium = "${imagePath}menu_premium.svg";
   static String menuHelp = "${imagePath}menu_help.svg";
   static String menuContactUs = "${imagePath}menu_contactUs.svg";
@@ -66,6 +67,7 @@ class AppImages {
   static String filterCalendar = "${imagePath}filter_calendar.svg";
   static String filterLocation = "${imagePath}filter_location.svg";
   static String filterForward = "${imagePath}filter_forward.svg";
+  static String editProfile = "${imagePath}editProfile.svg";
 
 
 

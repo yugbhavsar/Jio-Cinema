@@ -1,23 +1,17 @@
 part of 'event_filter_bloc.dart';
 
 @immutable
-sealed class EventFilterState {}
+final class EventFilterState {
 
-final class EventFilterInitial extends EventFilterState {
+  int selectedCategories;
+  int selectedDateTimeIndex;
+  double minPriceValue;
+  double maxPriceValue;
 
-  int selectedCategories = 0 ;
+  EventFilterState({this.selectedCategories = 0, this.selectedDateTimeIndex = 0 , this.minPriceValue = 40 , this.maxPriceValue = 450});
 
-}
 
-final class EventFilterCategoriesChangeState extends EventFilterState {
-  EventFilterCategoriesChangeState(this.selectedIndex);
-
-    int selectedIndex;
-}
-
-final class EventFilterChangeDateTimeSelection extends EventFilterState {
-
-  EventFilterChangeDateTimeSelection({required this.selectedIndex});
-
-  int selectedIndex;
+  EventFilterState copy() {
+    return EventFilterState(selectedCategories: selectedCategories , selectedDateTimeIndex:  selectedDateTimeIndex, minPriceValue: minPriceValue , maxPriceValue: maxPriceValue);
+  }
 }
