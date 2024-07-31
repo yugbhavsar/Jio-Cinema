@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
-import 'package:jiocinema_clone/Utilities/Utilites.dart';
+import 'package:jiocinema_clone/Utilities/Utilities.dart';
 
 class EventDetailScreen extends StatelessWidget {
   const EventDetailScreen({super.key});

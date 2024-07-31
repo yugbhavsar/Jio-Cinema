@@ -68,6 +68,14 @@ class AppImages {
   static String filterLocation = "${imagePath}filter_location.svg";
   static String filterForward = "${imagePath}filter_forward.svg";
   static String editProfile = "${imagePath}editProfile.svg";
+  static String intrestEdit = "${imagePath}intrest_edit.svg";
+  static String followProfile = "${imagePath}follow_profile.svg";
+  static String messagesColor = "${imagePath}messages_color.svg";
+  static String star = "${imagePath}star.svg";
+  static String profile4 = "${imagePath}profile4.png";
+
+
+
 
 
 

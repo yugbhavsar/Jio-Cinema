@@ -7,7 +7,7 @@ import 'package:jiocinema_clone/Screens/EventDetail/bloc/event_filter_bloc.dart'
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
-import 'package:jiocinema_clone/Utilities/Utilites.dart';
+import 'package:jiocinema_clone/Utilities/Utilities.dart';
 
 
 class SearchEventScreen extends StatefulWidget {

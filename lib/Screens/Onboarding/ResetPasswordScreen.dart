@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
-import 'package:jiocinema_clone/Utilities/Utilites.dart';
+import 'package:jiocinema_clone/Utilities/Utilities.dart';
 
 
 class ResetPasswordScreen extends StatelessWidget {

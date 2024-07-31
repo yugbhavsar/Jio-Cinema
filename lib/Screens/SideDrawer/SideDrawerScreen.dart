@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/Dashboard/DashboardScreen.dart';
-import 'package:jiocinema_clone/Screens/EventDetail/bloc/event_filter_bloc.dart';
 import 'package:jiocinema_clone/Screens/SideDrawer/bloc/side_drawer_bloc.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
@@ -116,6 +115,8 @@ Widget buildMenu(BuildContext context) {
               ),
             ),
 
+            Expanded(child: appSizeBox()),
+
             Row(
               children: [
                 Container(
@@ -138,7 +139,6 @@ Widget buildMenu(BuildContext context) {
                   ),
                 ),
 
-                Expanded(child: appSizeBox())
               ],
             ),
 

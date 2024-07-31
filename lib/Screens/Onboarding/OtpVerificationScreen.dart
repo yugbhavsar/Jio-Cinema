@@ -4,7 +4,7 @@ import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
-import 'package:jiocinema_clone/Utilities/Utilites.dart';
+import 'package:jiocinema_clone/Utilities/Utilities.dart';
 
 
 class OtpVerificationScreen extends StatelessWidget {

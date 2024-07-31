@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiocinema_clone/Bloc/Introduction_bloc/introduction_slider_bloc.dart';
-import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/Dashboard/DashboardScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventDetailScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventFilterScreen.dart';
@@ -17,7 +16,6 @@ import 'package:jiocinema_clone/Screens/Onboarding/SplashScreen.dart';
 import 'package:jiocinema_clone/Screens/Profile/MyProfileScreen.dart';
 import 'package:jiocinema_clone/Screens/SearchEvents/SearchEventScreen.dart';
 import 'package:jiocinema_clone/Screens/SideDrawer/SideDrawerScreen.dart';
-import 'package:jiocinema_clone/Screens/SideDrawer/bloc/side_drawer_bloc.dart';
 
 class RouteName {
 
@@ -75,10 +73,7 @@ class AppRoute {
 
       case RouteName.sideDrawerScreen:
         return CupertinoPageRoute(
-            builder: (context) => BlocProvider(
-              create: (context) => SideDrawerBloc(),
-              child: const SideDrawerScreen(),
-            ),
+            builder: (context) => const SideDrawerScreen(),
             settings: const RouteSettings(name: RouteName.sideDrawerScreen)
         );
 
@@ -97,7 +92,10 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) =>  const SearchEventScreen(),settings: const RouteSettings(name: RouteName.searchEventScreen));
 
       case RouteName.myProfileScreen:
-        return MaterialPageRoute(builder: (context) => const MyProfileScreen(),settings: const RouteSettings(name: RouteName.myProfileScreen));
+        return MaterialPageRoute(
+            builder: (context) => MyProfileScreen(),
+            settings: const RouteSettings(name: RouteName.myProfileScreen)
+        );
       default:
         return MaterialPageRoute(builder: (context) => DashboardScreen(),settings: const RouteSettings(name: RouteName.loginScreen));
     }

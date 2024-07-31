@@ -38,6 +38,9 @@ dependencies:
   flutter_bloc: ^8.1.5
   flutter_svg: ^2.0.10+1
   shrink_sidemenu: ^2.0.0+2-null-safety
+  firebase_auth: ^4.16.0
+  firebase_core: ^2.24.2
+  loading_animation_widget: ^1.2.1
 
 dev_dependencies:
   flutter_test:

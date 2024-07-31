@@ -5,8 +5,9 @@ import 'package:jiocinema_clone/Screens/Dashboard/DashboardWidgets.dart';
 import 'package:jiocinema_clone/Screens/SideDrawer/bloc/side_drawer_bloc.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
+import 'package:jiocinema_clone/Utilities/GlobalFunctions.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
-import 'package:jiocinema_clone/Utilities/Utilites.dart';
+import 'package:jiocinema_clone/Utilities/Utilities.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
@@ -23,12 +24,7 @@ class DashboardScreen extends StatelessWidget {
           isHaveSuffixAction: true,
           actions: [AppImages.dbNotification],
           leadingIconOnTap: () {
-            var state = context.read<SideDrawerBloc>().sideMenuKey.currentState;
-            if (state?.isOpened ?? false) {
-              context.read<SideDrawerBloc>().sideMenuKey.currentState?.closeSideMenu();
-            }else{
-              context.read<SideDrawerBloc>().sideMenuKey.currentState?.openSideMenu();
-            }
+           GlobalFunctions.openSideMenu(context);
           },
           actionOnTap: (index ) {
 

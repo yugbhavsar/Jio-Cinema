@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1058085925584",
+    "project_id": "eventhub-b81cd",
+    "storage_bucket": "eventhub-b81cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058085925584:android:b5e1c1b18653d113d9a4d5",
+        "android_client_info": {
+          "package_name": "com.jiocinemaclone.jiocinema_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9CFcUkt2ztapvXc0com2N6-rvwLccOcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
