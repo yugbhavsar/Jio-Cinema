@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
-import 'package:jiocinema_clone/Screens/Dashboard/DashboardWidgets.dart';
-import 'package:jiocinema_clone/Screens/SideDrawer/bloc/side_drawer_bloc.dart';
+import 'package:jiocinema_clone/Screens/Dashboard/widgets/DashboardWidgets.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
 import 'package:jiocinema_clone/Utilities/GlobalFunctions.dart';

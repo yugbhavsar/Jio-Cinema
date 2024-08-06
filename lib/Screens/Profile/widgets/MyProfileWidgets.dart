@@ -122,7 +122,7 @@ class ProfileTabBarSection extends StatelessWidget {
 
                   appSizeBox(height: 20),
 
-                  Text("Enjoy your favorite dishe and a lovely your friends and family and have a great time. Food from local food trucks will be available for purchase. Read More",
+                  Text("Enjoy your favorite dishes and a lovely your friends and family and have a great time. Food from local food trucks will be available for purchase. Read More",
                     style: appTextStyle(fontType: FontType.medium500 , fontSize: 16 , textColor: AppColor.black),
                   ),
                 ],

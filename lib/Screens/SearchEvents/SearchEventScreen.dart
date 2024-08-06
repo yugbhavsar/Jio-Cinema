@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
-import 'package:jiocinema_clone/Screens/EventDetail/EventFilterScreen.dart';
-import 'package:jiocinema_clone/Screens/EventDetail/bloc/event_filter_bloc.dart';
+import 'package:jiocinema_clone/Screens/EventFilter/EventFilterScreen.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
 import 'package:jiocinema_clone/Utilities/Utilities.dart';
+
+import '../EventFilter/bloc/event_filter_bloc.dart';
 
 
 class SearchEventScreen extends StatefulWidget {

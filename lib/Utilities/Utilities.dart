@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_icon_snackbar/flutter_icon_snackbar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jiocinema_clone/Cubit/loader_view_cubit.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
@@ -35,17 +36,6 @@ class AppScaffold extends StatelessWidget {
               child: LoadingAnimationWidget.dotsTriangle(color: AppColor.primaryColor, size: 50),
             ):appSizeBox(),
 
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 1000),
-              height: state.dialogueBoxHeight,
-              curve: Curves.elasticOut,
-              alignment: Alignment(0,state.dialogueBoxPosition),
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20 , vertical: 10),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: AppColor.primaryColor),
-                child: Text("Dialogue Box Message Here", style: appTextStyle(fontType: FontType.semiBold , fontSize: 20 , textColor: AppColor.white),),
-              ),
-            ),
           ]
       );
     });

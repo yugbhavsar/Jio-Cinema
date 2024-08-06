@@ -12,7 +12,20 @@
           "package_name": "com.jiocinemaclone.jiocinema_clone"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1058085925584-he4tis5r7rsq24v0cfptsvku9bi2t488.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jiocinemaclone.jiocinema_clone",
+            "certificate_hash": "adfe7b3512c8471ea30cdbec4acfb9e6462f37e0"
+          }
+        },
+        {
+          "client_id": "1058085925584-aomo0ov78mdq9ths7q4bro5darm366mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD9CFcUkt2ztapvXc0com2N6-rvwLccOcA"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058085925584-aomo0ov78mdq9ths7q4bro5darm366mh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1058085925584-k11pjubsonpi6j14kqq14vij9cd8smnr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jiocinemaclone.app"
+              }
+            }
+          ]
         }
       }
     }

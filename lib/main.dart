@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiocinema_clone/Cubit/theme_style_cubit.dart';
 import 'package:jiocinema_clone/Screens/SideDrawer/bloc/side_drawer_bloc.dart';
+import 'package:jiocinema_clone/Utilities/GlobalFunctions.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
 import 'package:jiocinema_clone/Utilities/Utilities.dart';
 
@@ -11,6 +12,7 @@ import 'Cubit/loader_view_cubit.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await PreferenceUtils.instance.init();
   runApp(const MyApp());
 }
 
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
           
           BlocProvider(create: (context) => SideDrawerBloc(),),
 
-          BlocProvider(create: (context) => LoaderViewCubit(),)
+          BlocProvider(create: (context) => LoaderViewCubit(),),
         ], 
         child: BlocBuilder<ThemeStyleCubit, ThemeStyleState>(
       builder: (context, state)  {
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(scaffoldBackgroundColor: Colors.white,
                 appBarTheme: AppBarTheme(color: barColor)),
-            initialRoute: RouteName.introductionScreen,
+            initialRoute: RouteName.splashScreen,
             onGenerateRoute: AppRoute.generateRoute
         );
       },

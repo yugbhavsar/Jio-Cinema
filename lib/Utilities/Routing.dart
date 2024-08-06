@@ -4,18 +4,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jiocinema_clone/Bloc/Introduction_bloc/introduction_slider_bloc.dart';
 import 'package:jiocinema_clone/Screens/Dashboard/DashboardScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventDetailScreen.dart';
-import 'package:jiocinema_clone/Screens/EventDetail/EventFilterScreen.dart';
+import 'package:jiocinema_clone/Screens/EventFilter/EventFilterScreen.dart';
 import 'package:jiocinema_clone/Screens/EventDetail/EventListScreen.dart';
-import 'package:jiocinema_clone/Screens/EventDetail/bloc/event_filter_bloc.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/IntroductionSlideScreen.dart';
-import 'package:jiocinema_clone/Screens/Onboarding/LoginScreen.dart';
+import 'package:jiocinema_clone/Screens/LoginScreen/LoginScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/OtpVerificationScreen.dart';
 import 'package:jiocinema_clone/Screens/Onboarding/ResetPasswordScreen.dart';
-import 'package:jiocinema_clone/Screens/Onboarding/SignupScreen.dart';
-import 'package:jiocinema_clone/Screens/Onboarding/SplashScreen.dart';
+import 'package:jiocinema_clone/Screens/SignupScreen/SignupScreen.dart';
+import 'package:jiocinema_clone/Screens/SplashScreen/SplashScreen.dart';
 import 'package:jiocinema_clone/Screens/Profile/MyProfileScreen.dart';
 import 'package:jiocinema_clone/Screens/SearchEvents/SearchEventScreen.dart';
 import 'package:jiocinema_clone/Screens/SideDrawer/SideDrawerScreen.dart';
+import 'package:jiocinema_clone/Screens/SplashScreen/cubit/splash_cubit.dart';
+
+import '../Screens/EventFilter/bloc/event_filter_bloc.dart';
 
 class RouteName {
 
@@ -40,7 +42,12 @@ class AppRoute {
     switch (settings.name){
 
       case RouteName.splashScreen:
-        return MaterialPageRoute(builder: (context) => const SplashScreen(),settings: const RouteSettings(name: RouteName.splashScreen));
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+              create: (context) => SplashCubit(),
+              child: SplashScreen(),),
+            settings: const RouteSettings(name: RouteName.splashScreen)
+        );
 
       case RouteName.dashboard:
         return MaterialPageRoute(builder: (context) => DashboardScreen(),settings: const RouteSettings(name: RouteName.dashboard));
@@ -93,7 +100,7 @@ class AppRoute {
 
       case RouteName.myProfileScreen:
         return MaterialPageRoute(
-            builder: (context) => MyProfileScreen(),
+            builder: (context) => const MyProfileScreen(),
             settings: const RouteSettings(name: RouteName.myProfileScreen)
         );
       default:

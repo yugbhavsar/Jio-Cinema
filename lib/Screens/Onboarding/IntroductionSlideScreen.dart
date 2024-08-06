@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:jiocinema_clone/Bloc/Introduction_bloc/introduction_slider_bloc.dart';
 import 'package:jiocinema_clone/Utilities/AppStyling.dart';
 import 'package:jiocinema_clone/Utilities/Constants.dart';
+import 'package:jiocinema_clone/Utilities/GlobalFunctions.dart';
 import 'package:jiocinema_clone/Utilities/Routing.dart';
 
 
@@ -16,7 +17,7 @@ class IntroductionSlideScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocListener<IntroductionSliderBloc, IntroductionSliderState>(
-            listener: (context, state) {
+            listener: (context, state)  {
               if (state is IntroductionSkipState) {
                 Navigator.pushNamedAndRemoveUntil(context, RouteName.loginScreen, (route) {
                   return false;
