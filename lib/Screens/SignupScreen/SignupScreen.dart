@@ -36,6 +36,7 @@ class SignupScreen extends StatelessWidget {
       ),
       child: SafeArea(
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(decelerationRate: ScrollDecelerationRate.normal),
         child: Container(
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 20),
